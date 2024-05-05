@@ -25,7 +25,7 @@ namespace HardHashTest
             {
                 var startTime = DateTime.Now;
 
-                Dispatcher.Invoke(() => { TotalTime.Text = $"Creating buffer.."; });
+                //Dispatcher.Invoke(() => { TotalTime.Text = $"Creating buffer.."; });
 
                 var buffer = new byte[512 * 1024 * 1024];
                 var rnd = new Random();
@@ -35,7 +35,7 @@ namespace HardHashTest
                 var prevTime = DateTime.Now;
                 for (int i = 0; i < 100; i++)
                 {
-                    Dispatcher.Invoke(() => { TotalTime.Text = $"Hash {i:##0}"; });
+                    //Dispatcher.Invoke(() => { TotalTime.Text = $"Hash {i:##0}"; });
                     rnd.NextBytes(buffer);
                     hasher.ComputeHash(buffer);
                     ts[i] = DateTime.Now - prevTime;
